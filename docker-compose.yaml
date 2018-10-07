@@ -16,7 +16,9 @@ services:
     volumes:
       - ./default_authentication.conf:/etc/mysql/conf.d/default_authentication.cnf:ro # Docker の Mysql は /etc/mysql/conf.d/*.cnf を読み込む
     networks:
-    - main  # Add the container to the network "main"
+      - main  # Add the container to the network "main"
+    ports:
+        - "3306:3306"
   nginx:
     image: nginx
     volumes:
