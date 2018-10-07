@@ -1,5 +1,9 @@
-version: '2'
+version: "3.2"
 services:
+  app:
+    build: . # Current directory!
+    ports:
+    - "8001:8001"
   db:
     image: mysql
     environment:
