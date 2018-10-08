@@ -1,2 +1,3 @@
 Django
 mysqlclient
+uwsgi==2.0.17

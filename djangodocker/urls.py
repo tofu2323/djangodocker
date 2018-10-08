@@ -21,9 +21,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-
-    urlpatterns = [
-                      url(r'^__debug__/', include(debug_toolbar.urls)),
-                  ] + urlpatterns
+# TODO ここがあるとindexが表示されない
+# if not settings.DEBUG:
+#     import debug_toolbar
+#
+#     urlpatterns = [
+#                       url(r'^__debug__/', include(debug_toolbar.urls)),
+#                   ] + urlpatterns

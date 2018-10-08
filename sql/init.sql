@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS djangodocker_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE USER IF NOT EXISTS 'root'@'%' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON djangodocker_db.* TO 'root'@'%';
+
+FLUSH PRIVILEGES;
