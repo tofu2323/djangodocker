@@ -30,9 +30,8 @@ services:
       TZ: 'Asia/Tokyo'
     networks:
     - main  # Add the container to the network "main"
-#    volumes:
-#      - djangodocker.db.volume:/var/lib/mysql
-#      - ./sql:/docker-entrypoint-initdb.d
+    volumes:
+      - djangodocker.db.volume:/var/lib/mysql
     ports:
     - "3306:3306"
 
