@@ -2,11 +2,18 @@ sudo: required
 dist: trusty
 
 services:
-  - docker
+- docker
 
 install:
-  - docker-compose pull
-  - docker-compose build
+- docker-compose pull
+- docker-compose build
 
 script:
-  - docker-compose run -e DJANGO_SETTINGS_MODULE=djangodocker.settings.testing --no-deps --rm app py.test
+- docker-compose run -e DJANGO_SETTINGS_MODULE=djangodocker.settings.testing --no-deps --rm app py.test
+
+deploy:
+- provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
+  skip_cleanup: true
