@@ -11,6 +11,7 @@ services:
       args:
         requirements: requirements/development.txt
         DJANGO_SETTINGS_MODULE: djangodocker.settings.development
+        SECRET_KEY: ${SECRET_KEY}
     environment:
     - DJANGO_SETTINGS_MODULE=djangodocker.settings.development
     command: uwsgi --http :8001 --module djangodocker.wsgi
