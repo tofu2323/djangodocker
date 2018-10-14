@@ -17,7 +17,7 @@ services:
     volumes:
     - ./:/app
     networks:
-    - main  # Add the container to the network "main"
+    - main
     depends_on:
     - db
 
@@ -29,7 +29,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
       TZ: 'Asia/Tokyo'
     networks:
-    - main  # Add the container to the network "main"
+    - main
     volumes:
       - djangodocker.db.volume:/var/lib/mysql
     ports:
