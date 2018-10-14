@@ -13,7 +13,7 @@ docker build . -t "$image_full_name";
 
 echo "Authenticating";
 # The two variables are configured in travis.
-#echo "$DOCKER_PASS" | docker login -u="$DOCKER_USERNAME" --password-stdin;
+echo "$DOCKER_PASS" | docker login -u="$DOCKER_USERNAME" --password-stdin;
 
 echo "Pushing image '$image_full_name'";
 docker push "$image_full_name";
