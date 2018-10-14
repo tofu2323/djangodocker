@@ -11,6 +11,8 @@ install:
 script:
 - docker-compose run -e DJANGO_SETTINGS_MODULE=djangodocker.settings.testing --no-deps --rm app py.test
 
+before_deploy:
+- docker login -u="$DOCKER_USERNAME" --p="$DOCKER_PASS"
 deploy:
 - provider: script
   script: bash scripts/deploy.sh
